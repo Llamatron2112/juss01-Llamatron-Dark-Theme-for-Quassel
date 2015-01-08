@@ -1,0 +1,193 @@
+// This file is free software; you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation; version 2 of the License.
+
+// This program is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+
+// You should have received a copy of the GNU General Public License
+// along with this file.  If not, see <http://www.gnu.org/licenses/>.
+
+// Copyright (C) Jussi Schultink 2009
+// Modified in 2015 by Llamatron
+
+Palette {
+    marker-line: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop:0 #ff7b00, stop: 0.1 transparent);
+    
+    base: #131313;
+    alternate-base: #262626;
+    text: #debc85;
+    
+    link: #539FA3;
+    link-visited: #845B90;
+
+    window: #2b2b2b;
+    window-text: #debc85;
+
+    light: #B7B4AC;
+    midlight: #539FA3;
+    mid: #00583a;
+    dark: #000533;
+    shadow: #131313;
+    
+    button: #292929;
+    button-text: #B6B3AB;
+    
+    highlight: #00583a;
+    highlighted-text: #ff7b00;
+    }
+
+// Custom ChatView Colors
+ChatLine[label="highlight"] {
+    foreground: palette(text);
+    background: palette(highlight);
+    }
+
+ChatLine[label="selected"] {
+    foreground: palette(shadow);
+    background: palette(light);
+    }
+
+ChatLine::timestamp {
+    foreground: #707c70;
+    }
+
+ChatLine#plain { foreground: palette(text); }
+ChatLine#notice { foreground: #916409; }
+ChatLine#action { foreground: palette(text); font-style: italic; }
+ChatLine#nick { foreground: #633b5a; }
+ChatLine#mode { foreground: #346E9E; font-weight: bold; }
+ChatLine#join { foreground: #005538; }
+ChatLine#part { foreground: #633b5a; }
+ChatLine#quit { foreground: #683A38; }
+ChatLine#kick { foreground: #633b5a; }
+ChatLine#kill { foreground: #633b5a; }
+ChatLine#server { foreground: #916409; }
+ChatLine#info { foreground: #916409; }
+ChatLine#error { foreground: #916409; }
+ChatLine#daychange { foreground: #916409; }
+ChatLine#topic { foreground: #633b5a; }
+
+// Sender Colors
+ChatLine::sender#plain[sender="self"] { foreground: #009966; }
+
+ChatLine::sender#plain[sender="00"] { foreground: #e90d7f; }
+ChatLine::sender#plain[sender="01"] { foreground: #8e55e9; }
+ChatLine::sender#plain[sender="02"] { foreground: #b30e0e; }
+ChatLine::sender#plain[sender="03"] { foreground: #17b339; }
+ChatLine::sender#plain[sender="04"] { foreground: #58afb3; }
+ChatLine::sender#plain[sender="05"] { foreground: #9d54b3; }
+ChatLine::sender#plain[sender="06"] { foreground: #b39775; }
+ChatLine::sender#plain[sender="07"] { foreground: #3176b3; }
+ChatLine::sender#plain[sender="08"] { foreground: #e90d7f; }
+ChatLine::sender#plain[sender="09"] { foreground: #8e55e9; }
+ChatLine::sender#plain[sender="0a"] { foreground: #b30e0e; }
+ChatLine::sender#plain[sender="0b"] { foreground: #17b339; }
+ChatLine::sender#plain[sender="0c"] { foreground: #58afb3; }
+ChatLine::sender#plain[sender="0d"] { foreground: #9d54b3; }
+ChatLine::sender#plain[sender="0e"] { foreground: #b39775; }
+ChatLine::sender#plain[sender="0f"] { foreground: #3176b3; }
+
+// BufferView Colors
+ChatListItem[state="inactive"] {
+    foreground: #a0a0a4;
+    }
+
+ChatListItem[state="channel-event"] {
+    foreground: #008000;
+    }
+
+ChatListItem[state="unread-message"] {
+    foreground: palette(highlighted-text);
+    }
+
+ChatListItem[state="highlighted"] {
+    foreground: #ff00bf;
+    }
+
+// NickView Colors
+NickListItem[type="category"] {
+    foreground: palette(mid);
+    }
+
+NickListItem[type="user"] {
+    foreground: palette(text);
+    }
+
+NickListItem[type="user", state="away"] {
+    foreground: palette(light);
+    }
+
+MultiLineEdit {
+    background: palette(base);
+    color: palette(text);
+    selection-color: palette(base);
+    selection-background-color: palette(light);
+    }
+
+StyledLabel#topicLabel {
+    background: palette(base);
+    }
+
+ChatLine#topic {
+    foreground: palette(text);
+    }
+
+// Miscellaneous Colors
+
+QMenuBar {
+    color: palette(light);
+    selection-color: palette(text);
+    selection-background-color: palette(mid);
+    }
+
+QMenu {
+    background-color: palette(base);
+    color: palette(text);
+    }
+
+QMenu::item:selected {
+    color: palette(text);
+    background: palette(mid);
+    }
+
+QTreeView, QTableView, QListView {
+    alternate-background-color: palette(alternate-base);
+    background-color: palette(base);
+    color: palette(text);
+    selection-background-color: palette(mid);
+    selection-color: palette(text);
+    }
+
+QTreeView::item:selected, QTableView::item:selected, QListView::item:selected {
+    background: palette(mid);
+    color: palette(text);
+    }
+
+QComboBox {
+    background-color: palette(base);
+    color: palette(text);
+    selection-background-color: palette(mid);
+    }
+
+QSpinBox, QLineEdit {
+    selection-background-color: palette(mid);
+    }
+
+QProgressBar {
+    background-color: palette(base);
+    color: palette(dark);
+    text-align: center;
+    }
+
+QProgressBar::chunk {
+    background-color: palette(highlighted-text);
+    }
+
+QToolTip {
+    border: 2px solid palette(dark);
+    background: palette(base);
+    color: palette(text);
+    }
