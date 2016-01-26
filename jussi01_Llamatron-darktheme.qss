@@ -162,8 +162,12 @@ QTreeView, QTableView, QListView {
     }
 
 QTreeView::item:selected, QTableView::item:selected, QListView::item:selected {
-    background: palette(mid);
+    background-color: palette(mid);
     color: palette(text);
+    }
+
+QTreeView::branch::selected {
+    background-color: palette(mid);
     }
 
 QComboBox {
